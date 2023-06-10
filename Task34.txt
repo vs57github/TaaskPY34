@@ -1,0 +1,12 @@
+poem='пара-ра-рам рам-пам-папам па-ра-па-да'
+def check_rhythm(poem):
+    words = poem.split()
+    syllables = []
+    for word in words:
+        syllables.append(len([letter for letter in word if letter in 'aeiouyAEIOUY']))
+    if len(set(syllables)) == 1:
+        return 'Парам пам-пам'
+    else:
+        return 'Пам парам'
+check_rhythm(poem)
+print(check_rhythm(poem))
